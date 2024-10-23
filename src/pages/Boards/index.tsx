@@ -23,7 +23,7 @@ const reducer = (state: ColumnType[], action: Action) => {
     case "addColumn": {
       return [
         ...state,
-        { id: uuidv4(), title: `Column ${state.length}`, tasks: [] },
+        { id: uuidv4(), title: `Column ${state.length + 1}`, tasks: [] },
       ];
     }
     case "deleteColumn": {
@@ -46,7 +46,7 @@ const reducer = (state: ColumnType[], action: Action) => {
       if (column)
         column?.tasks.push({
           id: uuidv4(),
-          title: `Task ${column.tasks.length}`,
+          title: `Task ${column.tasks.length + 1}`,
           description: "",
           status: "",
         });
